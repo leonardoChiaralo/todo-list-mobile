@@ -7,9 +7,10 @@ interface IProps {
   tasks: ITask[];
   deleteTask: (id: string) => Promise<void>;
   completeTask: (id: string) => Promise<void>;
+  updateTask: (id: string, title: string, description: string) => Promise<void>;
 }
 
-function Tasks({tasks, deleteTask, completeTask}: IProps) {
+function Tasks({tasks, deleteTask, completeTask, updateTask}: IProps) {
   return (
     <View style={styles.tasks}>
       <Text style={styles.title}>Tarefas</Text>
@@ -19,6 +20,7 @@ function Tasks({tasks, deleteTask, completeTask}: IProps) {
           task={task}
           deleteTask={deleteTask}
           completeTask={completeTask}
+          updateTask={updateTask}
         />
       ))}
     </View>

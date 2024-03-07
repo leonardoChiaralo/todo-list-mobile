@@ -37,6 +37,18 @@ function App() {
     }
   };
 
+  const updateTask = async (id: string, title: string, description: string) => {
+    try {
+      await axios.put(`http://192.168.170.31:3030/tasks/${id}`, {
+        title,
+        description,
+      });
+      readTasks();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const deleteTask = async (id: string) => {
     try {
       await axios.delete(`http://192.168.170.31:3030/tasks/${id}`);
@@ -67,6 +79,7 @@ function App() {
         tasks={tasks}
         deleteTask={deleteTask}
         completeTask={completeTask}
+        updateTask={updateTask}
       />
       <Button createTask={createTask} />
     </View>

@@ -1,17 +1,23 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Text, TouchableOpacity, View, StyleSheet} from 'react-native';
 import {ITask} from '../../interfaces/task';
+import Description from '../Description';
 
 interface IProps {
   task: ITask;
   deleteTask: (id: string) => Promise<void>;
   completeTask: (id: string) => Promise<void>;
+  updateTask: (id: string, title: string, description: string) => Promise<void>;
 }
 
-function Item({task, deleteTask, completeTask}: IProps) {
+function Item({task, deleteTask, completeTask, updateTask}: IProps) {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <View style={styles.item}>
-      <TouchableOpacity style={styles.containerText}>
+      <TouchableOpacity
+        style={styles.containerText}
+        onPress={() => setShowModal(true)}>
         <Text
           style={[
             styles.itemText,
@@ -23,6 +29,12 @@ function Item({task, deleteTask, completeTask}: IProps) {
           {task.title}
         </Text>
       </TouchableOpacity>
+      <Description
+        task={task}
+        showModal={showModal}
+        setShowModal={setShowModal}
+        updateTask={updateTask}
+      />
       <View style={styles.buttonsContainer}>
         <TouchableOpacity
           style={styles.buttonComplete}
