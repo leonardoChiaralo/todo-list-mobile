@@ -1,13 +1,14 @@
 import React, {useState, useEffect} from 'react';
-import {View, StyleSheet} from 'react-native';
-import {ITask} from './src/interfaces/task';
+import {View} from 'react-native';
+import {ITask} from '../../../interfaces/task';
+import styles from './styles';
 import axios from 'axios';
 import Toast from 'react-native-toast-message';
-import Header from './src/components/Header';
-import Tasks from './src/components/Tasks';
-import Button from './src/components/Button';
+import Header from '../../../components/Header';
+import Tasks from '../../../components/Tasks';
+import Button from '../../../components/Button';
 
-function App() {
+function Home() {
   const [tasks, setTasks] = useState<ITask[]>([]);
 
   useEffect(() => {
@@ -116,14 +117,4 @@ function App() {
   );
 }
 
-export default App;
-
-const styles = StyleSheet.create({
-  display: {
-    backgroundColor: '#283747',
-    flex: 1,
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
-});
+export default Home;

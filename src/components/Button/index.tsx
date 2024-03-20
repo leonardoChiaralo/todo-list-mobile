@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import {Text, TouchableOpacity, StyleSheet, View} from 'react-native';
+import {Text, TouchableOpacity, View} from 'react-native';
+import styles from './styles';
 import Form from '../Form';
 
 interface IProps {
@@ -30,29 +31,3 @@ function Button({createTask}: IProps) {
 }
 
 export default Button;
-
-const styles = StyleSheet.create({
-  container: {
-    width: '80%',
-    backgroundColor: 'rgba(0, 0, 0, 0.2)',
-    borderColor: 'rgba(0, 0, 0, 0.2)',
-    borderWidth: 2,
-    borderStyle: 'dashed',
-    borderRadius: 5,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  button: {
-    width: '100%',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    margin: 5,
-  },
-  title: {
-    color: '#f0f3f4',
-    fontSize: 15,
-    fontWeight: 'bold',
-  },
-});
