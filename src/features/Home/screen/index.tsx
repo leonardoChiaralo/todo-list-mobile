@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {View} from 'react-native';
+import {StatusBar, View} from 'react-native';
 import {ITask} from '../../../interfaces/task';
 import styles from './styles';
 import axios from 'axios';
@@ -104,6 +104,7 @@ function Home() {
 
   return (
     <View style={styles.display}>
+      <StatusBar backgroundColor="transparent" translucent />
       <Toast />
       <Header />
       <Tasks
