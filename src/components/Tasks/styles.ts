@@ -8,15 +8,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 5,
-    padding: 10,
+    paddingHorizontal: 10,
+    paddingBottom: 10,
     marginBottom: 15,
   },
   title: {
     color: 'black',
-    fontSize: 20,
-    fontWeight: 'bold',
+    fontFamily: 'Pacifico-Regular',
+    fontSize: 25,
     textDecorationLine: 'underline',
-    marginBottom: 5,
   },
 });
 

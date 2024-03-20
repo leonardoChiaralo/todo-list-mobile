@@ -21,8 +21,8 @@ const styles = StyleSheet.create({
   },
   title: {
     color: '#f0f3f4',
+    fontFamily: 'RobotoCondensed-ExtraBold',
     fontSize: 15,
-    fontWeight: 'bold',
   },
 });
 

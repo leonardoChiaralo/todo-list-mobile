@@ -39,8 +39,8 @@ const styles = StyleSheet.create({
   },
   buttonsText: {
     color: 'black',
+    fontFamily: 'RobotoCondensed-ExtraBold',
     fontSize: 12,
-    fontWeight: 'bold',
   },
 });
 

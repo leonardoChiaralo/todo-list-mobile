@@ -1,0 +1,17 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/Pacifico-Regular.ttf",
+      "sha1": "baca1fca7fe74b61cb33aa0da48ec1a3a77bcf49"
+    },
+    {
+      "path": "assets/fonts/RobotoCondensed-Bold.ttf",
+      "sha1": "585fa2d1e256a697400ca52fc1d4988c5252c37c"
+    },
+    {
+      "path": "assets/fonts/RobotoCondensed-ExtraBold.ttf",
+      "sha1": "a2418e180e7f547dba4e8bab0003ec81ff0064a0"
+    }
+  ]
+}

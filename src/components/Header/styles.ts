@@ -4,7 +4,7 @@ const styles = StyleSheet.create({
   header: {
     height: 'auto',
     width: '80%',
-    margin: 30,
+    margin: 35,
     alignItems: 'center',
     justifyContent: 'center',
     borderBottomWidth: 1,
@@ -13,9 +13,9 @@ const styles = StyleSheet.create({
   },
   title: {
     color: 'white',
+    fontFamily: 'Pacifico-Regular',
     fontSize: 30,
-    fontWeight: 'bold',
-    marginBottom: 20,
+    marginBottom: 5,
   },
 });
 

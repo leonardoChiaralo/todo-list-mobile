@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     width: '90%',
     minHeight: '40%',
     maxHeight: '80%',
-    padding: 10,
+    padding: 5,
     alignItems: 'center',
     backgroundColor: '#5d6d7e',
     borderRadius: 10,
@@ -24,14 +24,14 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingBottom: 10,
+    paddingBottom: 5,
     borderBottomWidth: 1,
     borderBottomColor: 'rgba(0, 0, 0, 0.3)',
   },
   title: {
     width: '80%',
+    fontFamily: 'Pacifico-Regular',
     fontSize: 20,
-    fontWeight: 'bold',
     color: 'black',
   },
   editButton: {
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
   },
   edit: {
     color: 'white',
-    fontWeight: 'bold',
+    fontFamily: 'RobotoCondensed-ExtraBold',
   },
   descriptionContainer: {
     width: '90%',
@@ -53,6 +53,7 @@ const styles = StyleSheet.create({
   },
   status: {
     fontSize: 15,
+    fontWeight: 'bold',
     color: '#ffffff8f',
     marginBottom: 5,
   },
@@ -63,15 +64,17 @@ const styles = StyleSheet.create({
   },
   editTitle: {
     width: '80%',
+    height: 40,
+    padding: 5,
+    fontFamily: 'Pacifico-Regular',
     fontSize: 20,
-    fontWeight: 'bold',
     color: 'white',
     backgroundColor: '#283747',
     borderRadius: 5,
   },
   editDescription: {
     width: '100%',
-    fontSize: 20,
+    fontSize: 16,
     fontWeight: 'bold',
     color: 'white',
     backgroundColor: '#283747',
