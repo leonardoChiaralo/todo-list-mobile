@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import {View, StyleSheet} from 'react-native';
-import axios from 'axios';
 import {ITask} from './src/interfaces/task';
+import axios from 'axios';
+import Toast from 'react-native-toast-message';
 import Header from './src/components/Header';
 import Tasks from './src/components/Tasks';
 import Button from './src/components/Button';
@@ -22,9 +23,17 @@ function App() {
 
     try {
       await axios.post('http://192.168.170.31:3030/tasks', newTask);
+      Toast.show({
+        type: 'success',
+        text1: 'Tarefa criada com sucesso!',
+      });
       readTasks();
-    } catch (error) {
-      console.log(error);
+    } catch (err) {
+      console.log(err);
+      Toast.show({
+        type: 'error',
+        text1: 'Não foi possível criar a tarefa.',
+      });
     }
   };
 
@@ -32,8 +41,12 @@ function App() {
     try {
       const response = await axios.get('http://192.168.170.31:3030/tasks');
       setTasks(response.data);
-    } catch (error) {
-      console.log(error);
+    } catch (err) {
+      console.log(err);
+      Toast.show({
+        type: 'error',
+        text1: 'Não foi possível encontrar suas tarefas.',
+      });
     }
   };
 
@@ -44,17 +57,25 @@ function App() {
         description,
       });
       readTasks();
-    } catch (error) {
-      console.log(error);
+    } catch (err) {
+      console.log(err);
     }
   };
 
   const deleteTask = async (id: string) => {
     try {
       await axios.delete(`http://192.168.170.31:3030/tasks/${id}`);
+      Toast.show({
+        type: 'success',
+        text1: 'Tarefa removida com sucesso!',
+      });
       readTasks();
-    } catch (error) {
-      console.log(error);
+    } catch (err) {
+      console.log(err);
+      Toast.show({
+        type: 'error',
+        text1: 'Não possível remover a tarefa.',
+      });
     }
   };
 
@@ -67,13 +88,22 @@ function App() {
           isCompleted: task._id === id ? !task.isCompleted : task.isCompleted,
         })),
       );
-    } catch (error) {
-      console.log(error);
+      Toast.show({
+        type: 'success',
+        text1: 'Tarefa atualizada com sucesso!',
+      });
+    } catch (err) {
+      console.log(err);
+      Toast.show({
+        type: 'error',
+        text1: 'Não possível atualizar a tarefa.',
+      });
     }
   };
 
   return (
     <View style={styles.display}>
+      <Toast />
       <Header />
       <Tasks
         tasks={tasks}

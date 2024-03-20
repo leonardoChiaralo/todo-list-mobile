@@ -10,6 +10,7 @@ import {
   Platform,
 } from 'react-native';
 import {ITask} from '../../interfaces/task';
+import Toast from 'react-native-toast-message';
 
 interface IProps {
   task: ITask;
@@ -28,8 +29,19 @@ function Description({task, showModal, setShowModal, updateTask}: IProps) {
   };
 
   const handleSave = () => {
-    updateTask(task._id, title, description);
-    setEditing(false);
+    try {
+      updateTask(task._id, title, description);
+      setEditing(false);
+      Toast.show({
+        type: 'success',
+        text1: 'Tarefa editada com sucesso!',
+      });
+    } catch (err) {
+      Toast.show({
+        type: 'error',
+        text1: 'Não foi possóvel editar a tarefa.',
+      });
+    }
   };
 
   const status = task.isCompleted ? 'Completa' : 'A Fazer';
@@ -46,6 +58,7 @@ function Description({task, showModal, setShowModal, updateTask}: IProps) {
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         style={styles.container}>
         <View style={styles.background}>
+          <Toast />
           <View style={styles.modal}>
             <View style={styles.titleContainer}>
               {editing ? (
